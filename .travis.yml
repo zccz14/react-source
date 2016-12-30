@@ -1,0 +1,14 @@
+language: node_js
+node_js: 
+    - "6"
+before_install:
+    - git config --global user.email zccz14@outlook.com
+    - git config --global user.name zccz14
+script:
+    - npm run build
+after_success:
+    - cd public
+    - git init
+    - git add .
+    - git commit -m "Travis Deploy"
+    - git push -f -q $GITHUB_URI master
