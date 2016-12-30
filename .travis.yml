@@ -7,7 +7,7 @@ before_install:
 script:
     - npm run build
 after_success:
-    - cd public
+    - cd build
     - git init
     - git add .
     - git commit -m "Travis Deploy"

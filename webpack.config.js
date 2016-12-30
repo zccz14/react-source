@@ -1,9 +1,10 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    entry: './entry.js',
+    entry: './src/index.jsx',
     output: {
-        path: path.join(__dirname, 'public', 'dist'),
+        path: path.join(__dirname, 'build'),
         filename: 'bundle.js'
     },
     resolve: {
@@ -13,5 +14,6 @@ module.exports = {
         loaders: [
             { test: /\.jsx?$/, loaders: ['babel'] }
         ]
-    }
+    },
+    plugins: [new HtmlWebpackPlugin({ title: 'React Demo' })]
 }
